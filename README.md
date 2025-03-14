@@ -29,14 +29,7 @@ This project is a simple Java application that fetches weather data for multiple
 - **`Future<WeatherData>` stores the result asynchronously**, allowing us to retrieve data when ready.
 - **Parallel execution improves performance** by reducing waiting time for API responses.
 
-### Sample Output
-```
-Weather in New York: 15.0°C, Wind Speed: 10.5 km/h, Wind Direction: 45.0°
-Weather in London: 12.0°C, Wind Speed: 8.0 km/h, Wind Direction: 90.0°
-Weather in Tokyo: 20.0°C, Wind Speed: 5.0 km/h, Wind Direction: 180.0°
-Weather in Cairo: 30.0°C, Wind Speed: 12.0 km/h, Wind Direction: 270.0°
-Weather in Paris: 18.0°C, Wind Speed: 7.5 km/h, Wind Direction: 135.0°
-```
+
 
 
 
