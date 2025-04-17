@@ -2,34 +2,55 @@
 
 This project is a simple Java application that fetches weather data for multiple cities using the [Open-Meteo](https://open-meteo.com/) API. It leverages **multithreading** to enhance performance by retrieving weather data concurrently.
 
-## Key Features
-- **Multithreading with ExecutorService** to fetch data for multiple cities in parallel.
-- **Uses `Callable<WeatherData>`** to allow asynchronous execution and result retrieval.
-- **Thread Pool Management** to optimize resource usage.
-- **JSON Parsing with Gson** to process API responses.
+## Features
+Multi-threaded Weather Fetching
+Utilizes a configurable thread pool to fetch weather data concurrently.
 
-## Project Structure
+Real-Time Updates
+Automatically refreshes weather data every 5 seconds.
 
-1. **`WeatherData.java`**
-   - Represents weather data for a city, including temperature, wind speed, and wind direction.
+Interactive GUI
 
-2. **`WeatherFetcher.java`**
-   - Implements `Callable<WeatherData>`, making it executable in a separate thread.
-   - Fetches weather data for a given city from the API.
+Table view showing weather information for all selected cities.
 
-3. **`Main.java`**
-   - Creates a thread pool using `ExecutorService`.
-   - Submits multiple `WeatherFetcher` tasks for concurrent execution.
-   - Retrieves and prints weather data from `Future<WeatherData>`.
+Individual pop-up windows for each city with detailed weather data.
 
+City selection interface with dropdown menu and management list.
 
-## Multithreading Explanation
-- **ExecutorService** is used to manage a thread pool efficiently.
-- **Each city request is executed in a separate thread** using `executor.submit(fetcher)`.
-- **`Future<WeatherData>` stores the result asynchronously**, allowing us to retrieve data when ready.
-- **Parallel execution improves performance** by reducing waiting time for API responses.
+Robust Error Handling
+Graceful handling of errors during API requests and data parsing.
 
+🧩 Components
+WeatherAppGUI – Main application window with controls and weather table.
 
+BuildThread – Manages the thread pool and coordinates weather fetching tasks.
 
+WeatherFetcher – A Callable task responsible for fetching weather data from the Open-Meteo API.
+
+ThreadWindow – Separate window displaying detailed weather info for a specific city.
+
+WeatherData – Data structure to store and organize weather details.
+
+🌍 Supported Cities
+The application supports weather data for 29 major cities worldwide:
+
+New York, London, Tokyo, Sydney, Cairo, Paris, Berlin, Moscow, Beijing, Mumbai,
+Rio de Janeiro, Buenos Aires, Johannesburg, Dubai, Singapore, Los Angeles, Chicago, Toronto,
+Mexico City, Seoul, Bangkok, Istanbul, Madrid, Rome, Kuala Lumpur, Hong Kong, Lagos, Karachi, Jakarta
+
+🔧 Technical Details
+API: Open-Meteo API for real-time weather data.
+
+Threading:
+
+Fixed Thread Pool for concurrent API calls.
+
+Scheduled Executor for periodic updates.
+
+GUI: Built with Swing for desktop interface.
+
+JSON Parsing: Handled via the Gson library.
+
+Concurrency: Uses ConcurrentHashMap for thread-safe data operations.
 
 
