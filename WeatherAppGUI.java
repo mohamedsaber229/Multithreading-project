@@ -125,36 +125,5 @@ public class WeatherAppGUI {
         frame.setVisible(true);
     }
 
-//    private void fetchWeatherData_AddToTable(List<String> cities, JTable weatherTable) {
-//
-//        Runnable task = () -> {
-//            SwingUtilities.invokeLater(() -> {
-//                DefaultTableModel model = (DefaultTableModel) weatherTable.getModel();
-//                model.setRowCount(0); // Clear old data
-//            });
-//
-//            List<Future<WeatherData>> futures = buildThread.fetchWeatherData(cities);
-//
-//
-//            for (Future<WeatherData> future : futures) {
-//                try {
-//                    WeatherData data = future.get();
-//                    SwingUtilities.invokeLater(() -> {
-//                        DefaultTableModel model = (DefaultTableModel) weatherTable.getModel();
-//                        model.addRow(new Object[]{
-//                                data.getLocation(),
-//                                data.getTemperature(),
-//                                data.getWindSpeed(),
-//                                data.getWindDirection()
-//                        });
-//                    });
-//                } catch (Exception e) {
-//                    System.err.println("Error fetching data: " + e.getMessage());
-//                }
-//            }
-//        };
-//
-//        buildThread.scheduler.scheduleAtFixedRate(task, 0, 5, TimeUnit.SECONDS);
-//
-//    }
+
 }
